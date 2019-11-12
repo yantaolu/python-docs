@@ -97,3 +97,6 @@ else:
 # 空值 None
 # 空值是Python里一个特殊的值，用None表示，简单的可以理解为不存在
 None
+
+
+print('%s is my goddess.' % 'Mao Linlin')
