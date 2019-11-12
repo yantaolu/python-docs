@@ -1,0 +1,90 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+# 函数的简单回顾
+# 函数通常是对重复的常用代码进行整合或概括成【代码段】，从而提高代码的复用率
+# 定义函数要使用 def 关键字
+
+
+def getNextNumber(val):
+    return val + 1
+
+
+# 定义一个变量 number
+number = 10
+print(number)  # => 10
+# 获取变量后面的一个值
+print(getNextNumber(number))  # => 11
+
+# 直接获取 20 后面的值
+print(getNextNumber(20))  # => 21
+
+# python 内置了很多函数可以使用，不需要自己定义
+# print 本身就是一个内置的用于输出的函数
+# 比如取绝对值
+print(abs(-22))  # => 22
+
+
+# 咱们还是使用之前的例子，定义一个 dict
+m = {'nickname': '小仙女', 'age': 18}
+
+print(m)  # => {'nickname': '小仙女', 'age': 18}
+
+# 接着咱们来看一个函数，使用该函数修改 d 的 nickname
+
+
+def setNickname(nickname):
+    m['nickname'] = nickname
+
+
+setNickname('毛宝宝')
+print(m)  # => {'nickname': '毛宝宝', 'age': 18}
+
+setNickname('小可爱')
+print(m)  # => {'nickname': '小可爱', 'age': 18}
+
+# 上面的函数存在一个问题，就是智能修改 d 的 nickname 值，那么我如果想要修改 age 是不是又需要定义一个 setAge
+
+
+def setAge(age):
+    m['age'] = age
+
+
+setAge(17)
+
+print(m)  # => {'nickname': '小可爱', 'age': 17}
+
+# 那如果key - value对再多了，是不是要定义更多的函数呢？那能不能换个更通用的函数呢
+
+
+def setKeyValue(key, value):
+    m[key] = value
+
+
+setKeyValue('nickname', '琳琳')
+print(m)  # => {'nickname': '琳琳', 'age': 17}
+
+setKeyValue('age', 16)
+print(m)  # => {'nickname': '琳琳', 'age': 16}
+
+# 现在的函数比起一开始智能修改单一属性的函数来说强大了很多，但是还是只能修改变量 d 的 key - value，如果有新定义的 dict，又不能共用这个函数了，怎么办呢？
+
+
+def setDictKeyValue(dict, key, value):
+    dict[key] = value
+
+
+l = {'nickname': '霜枫晓寒', 'age': 28}
+
+print(l)  # => {'nickname': '霜枫晓寒', 'age': 28}
+
+setDictKeyValue(l, 'age', 29)
+print(l)  # => {'nickname': '霜枫晓寒', 'age': 29}
+
+setDictKeyValue(m, 'nickname', '变回小可爱')
+print(m)  # => {'nickname': '变回小可爱', 'age': 16}
+
+setDictKeyValue(m, 'name', '毛琳琳')
+print(m)  # => {'nickname': '变回小可爱', 'age': 16, 'name': '毛琳琳'}
+
+# 上面的函数可以改变任意 dict 的任意 key - value，那么我需要一个可以改变任意 dict 的 nickname 对应的 value 值应该怎么写呢？
