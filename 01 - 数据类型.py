@@ -1,17 +1,20 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-# 数据类型简单回顾
-
-# 简单基本数据类型
 # 整数
-1 or 0
+1
+0
+-1
 # 浮点数（小数）
 1.1
+3.14
+-5.20
 # 字符串（需要注意字符编码，推荐使用utf-8编码）
-'string' or '中文'
+'string'
+'中文'
 # 布尔值（真/假）
-True or False
+True
+False
 # 空值
 None
 
@@ -42,7 +45,7 @@ None
 'I am ' + 'Ok.'  # => 'I am Ok.'
 
 # 转义，当字符串内存在引号时，有时候可以利用单双引号避免转意
-'I\'m Ok.'  # "I'm Ok."
+'I\'m Ok.'  # => "I'm Ok."
 
 # 多行内容，字符串前后利用三引号 '''string'''，避免字符串拼接的麻烦
 '''
@@ -50,6 +53,9 @@ line1
 line2
 line3
 '''  # => 'line1\n' + 'line2\n' + 'line3\n'
+
+# 字符串占位符格式化
+'%s is my goddess.' % 'Mao Linlin'  # => 'Mao Linlin is my goddess'
 
 
 # 布尔值（boolean）真 - True 假 - False
@@ -92,11 +98,3 @@ if []:
     print('[] 是True')
 else:
     print('[] 是False')  # => [] 是False
-
-
-# 空值 None
-# 空值是Python里一个特殊的值，用None表示，简单的可以理解为不存在
-None
-
-
-print('%s is my goddess.' % 'Mao Linlin')
