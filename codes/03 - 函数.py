@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# -*- encoding: utf-8 -*-
+'''
+@文件    :03 - 函数.py
+@说明    :
+@时间    :2019/11/14 14:39:16
+@作者    :YantaoLu
+@版本    :1.0.0
+'''
 
 # 函数的简单回顾
 # 函数通常是对重复的常用代码进行整合或概括成【代码段】，从而提高代码的复用率
@@ -88,6 +95,3 @@ setDictKeyValue(m, 'name', '毛琳琳')
 print(m)  # => {'nickname': '变回小可爱', 'age': 16, 'name': '毛琳琳'}
 
 # 上面的函数可以改变任意 dict 的任意 key - value，那么我需要一个可以改变任意 dict 的 nickname 对应的 value 值应该怎么写呢？
-
-
-print('%.3f' % 5.1)
